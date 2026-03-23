@@ -1,0 +1,74 @@
+{
+    "name": "acpl/flarum-db-snapshots",
+    "description": "Create and restore database snapshots for Flarum via CLI",
+    "type": "flarum-extension",
+    "homepage": "https://github.com/android-com-pl/flarum-db-snapshots",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rafał Całka",
+            "homepage": "https://github.com/rafaucau",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/android-com-pl/flarum-db-snapshots/issues",
+        "source": "https://github.com/android-com-pl/flarum-db-snapshots",
+        "forum": "https://discuss.flarum.org/d/38880-flarum-database-snapshots"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/android-com-pl/flarum-db-snapshots?sponsor=1"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "flarum/core": "^v2.0.0-beta.8",
+        "spatie/db-dumper": "^4.1.0"
+    },
+    "require-dev": {
+        "flarum/phpstan": "^2.0@beta"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acpl\\FlarumDbSnapshots\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "DB Snapshots",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-database",
+                "backgroundColor": "#00dc51",
+                "color": "#15161E"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": false,
+                "forum": false,
+                "js": false,
+                "jsCommon": false,
+                "gitConf": true,
+                "githubActions": true,
+                "prettier": false,
+                "typescript": false,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": true,
+                "styleci": true,
+                "css": false
+            }
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse:phpstan": "phpstan analyse"
+    }
+}
